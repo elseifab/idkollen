@@ -1,0 +1,25 @@
+{
+    "name": "elseif/id-kollen",
+    "type": "wordpress-plugin",
+    "config": {
+        "preferred-install": "dist",
+        "platform": {
+            "php": "7.1"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5",
+        "squizlabs/php_codesniffer": "*",
+        "frozzare/wp-test-suite": "*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andreas Ek",
+            "email": "andreas@elseif.se"
+        }
+    ],
+    "require": {
+        "php": ">=7.0"
+    }
+}

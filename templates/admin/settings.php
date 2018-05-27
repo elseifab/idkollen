@@ -29,9 +29,9 @@
 
         <p>
             <label for="apiKey">
-                API-nyckel från id-kollen:
-            </label>
-            <input type="text"
+                API-nyckel från id-kollen (account-id):
+            </label><br/>
+            <input type="text" size="45"
                    value="<?php echo $apiKey; ?>"
                    name="apiKey" />
         </p>
