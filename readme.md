@@ -4,3 +4,6 @@
 [![GitHub release](https://img.shields.io/github/release/elseifab/id-kollen.svg)](https://github.com/elseifab/archive/develop.zip)
 
 Tillägg för att underlätta integration id-kollen mot WordPress-konton för inloggning via BankID
+
+
+**WORK IN PROGRESS**
