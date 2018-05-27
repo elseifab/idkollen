@@ -13,6 +13,10 @@ Inga releaser/versioner av detta tillägg finns ännu...
 ### Utvecklingsmiljö
 Roots Bedrock i repo elseifab/id-kollen-dev används som utvecklingsmiljö för detta tillägg.
 
+## Tester
+
+Automatiska tester görs via Travis här: [https://travis-ci.org/elseifab/id-kollen](https://travis-ci.org/elseifab/id-kollen)
+
 ### PHPUnit
 Obs! `composer update` före enhetstestning!
 
