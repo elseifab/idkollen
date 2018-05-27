@@ -5,5 +5,25 @@
 
 Tillägg för att underlätta integration id-kollen mot WordPress-konton för inloggning via BankID
 
-
 **WORK IN PROGRESS**
+
+## Versioner
+Inga releaser/versioner av detta tillägg finns ännu...
+
+### Utvecklingsmiljö
+Roots Bedrock i repo elseifab/id-kollen-dev används som utvecklingsmiljö för detta tillägg.
+
+### PHPUnit
+Obs! `composer update` före enhetstestning!
+
+We run docker containers to unit tests in real WordPress (no mock).
+[https://github.com/frozzare/docker-wptest](https://github.com/frozzare/docker-wptest)
+[https://github.com/wpup/test-suite](https://github.com/wpup/test-suite)
+Special thanks to Frozzare!
+
+To initialize tests with docker, run: `docker run --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=true -d mysql:latest`
+
+To run tests, in the plugin folder, eg: `docker run -e WP_VERSION=4.9 --rm -v $(pwd):/opt --link mysql frozzare/wptest:5.6 vendor/bin/phpunit`
+
+PHPUnit testing with docker:
+[https://youtu.be/9CEoapNrrSc](Video)
