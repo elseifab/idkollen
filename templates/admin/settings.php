@@ -29,11 +29,20 @@
 
         <p>
             <label for="apiKey">
-                API-nyckel från id-kollen (account-id):
+                API-nyckel från IDkollen (account-id):
             </label><br/>
             <input type="text" size="45"
                    value="<?php echo $apiKey; ?>"
                    name="apiKey" />
+        </p>
+
+        <p>
+            <label for="timeout">
+                Timeout (vänta på klientinloggning):
+            </label><br/>
+            <input type="text" size="45"
+                   value="<?php echo $timeout; ?>"
+                   name="timeout" />
         </p>
 
         <input name="save" type="submit" class="button-primary" value="Spara"/>

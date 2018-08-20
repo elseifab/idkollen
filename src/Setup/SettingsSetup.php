@@ -11,8 +11,8 @@ class SettingsSetup implements SetupInterface
         add_action('admin_menu', function () {
             \add_submenu_page(
                 'options-general.php',
-                __('id-kollen', 'id-kollen'),
-                __('id-kollen', 'id-kollen'),
+                __('IDkollen', 'IDkollen'),
+                __('IDkollen', 'IDkollen'),
                 'manage_options',
                 'id-kollen-settings',
                 'ElseifAB\IDKollen\Settings\AdminMenu::render'

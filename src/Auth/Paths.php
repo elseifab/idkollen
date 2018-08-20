@@ -5,6 +5,6 @@ namespace ElseifAB\IDKollen\Auth;
 class Paths
 {
 
-    const MAIN_URL = "elseifab/id-kollen/v1";
+    const MAIN_URL = "elseifab/idkollen/v1";
 
 }

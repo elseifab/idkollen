@@ -16,6 +16,10 @@ class AdminMenu
             ApiKeyManager::set(esc_attr($_REQUEST['apiKey']));
         }
 
+        if (isset($_REQUEST['timeout'])) {
+            Timeout::set((int)esc_attr($_REQUEST['timeout']));
+        }
+
         if (isset($_REQUEST['debug'])) {
             Debug::current()->enable();
         } elseif (isset($_POST['save'])) {
@@ -25,10 +29,11 @@ class AdminMenu
         $apiKey = ApiKeyManager::get();
 
         echo Template::render('admin/settings', [
-            'headline' => __('Inställningar för id-kollen', 'id-kollen'),
-            'body' => __('Specifika inställningar för plugin id-kollen', 'id-kollen'),
+            'headline' => __('Inställningar för IDkollen', 'id-kollen'),
+            'body' => __('Specifika inställningar för plugin IDkollen', 'IDkollen'),
             'apiUrl' => rest_url(Paths::MAIN_URL . '/auth'),
             'apiKey' => $apiKey,
+            'timeout' => Timeout::get(),
             'debug' => Debug::current()->enabled(),
         ]);
     }
