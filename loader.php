@@ -2,7 +2,7 @@
 /*
  * Plugin Name: ID-Kollen
  * Description: Plugin för koppling mellan WP-konton och kontroll BankID via Idkollen
- * Version: 0.2
+ * Version: 0.2.1
  * Author: Andreas Ek, Elseif
  * GitHub Plugin URI: elseifab/id-kollen
  */

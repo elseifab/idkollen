@@ -26,7 +26,7 @@ class Init
 
         $result = Wait::loop($waitKey);
 
-        if(!$result) {
+        if (!$result) {
             return Responses::clientTimeout();
         }
 
@@ -45,7 +45,7 @@ class Init
             "itemId" => $waitKey,
             "itemDescription" => "Testing login Handelstrender",
             "pno" => $socialSecurityNumber,
-            "callbackUrl" => "https://www.amek.se",
+            "callbackUrl" => rest_url(Paths::MAIN_URL, '/callback'),
         ];
 
         return wp_remote_post("https://liveapi03.idkollen.se/api/seal-service/{$apiKey}/sign-item", [
