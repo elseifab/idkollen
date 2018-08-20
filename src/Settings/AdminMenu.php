@@ -3,6 +3,7 @@
 namespace ElseifAB\IDKollen\Settings;
 
 use ElseifAB\IDKollen\API\ApiKeyManager;
+use ElseifAB\IDKollen\Auth\Paths;
 use ElseifAB\IDKollen\Helper\Debug;
 use ElseifAB\IDKollen\Helper\Template;
 
@@ -26,7 +27,7 @@ class AdminMenu
         echo Template::render('admin/settings', [
             'headline' => __('Inställningar för id-kollen', 'id-kollen'),
             'body' => __('Specifika inställningar för plugin id-kollen', 'id-kollen'),
-            'apiUrl' => rest_url("elseifab/id-kollen/v1/auth"),
+            'apiUrl' => rest_url(Paths::MAIN_URL . '/auth'),
             'apiKey' => $apiKey,
             'debug' => Debug::current()->enabled(),
         ]);
