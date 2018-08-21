@@ -13,11 +13,7 @@ class Callback
 
         if ($itemId && $token) {
 
-            add_filter($itemId, function() use ($token) {
-                return $token;
-            });
-
-            sleep(3);
+            add_option($itemId, $token);
 
             return new \WP_REST_Response([
                 "result" => "success",
@@ -26,7 +22,6 @@ class Callback
             ]);
         }
 
-        set_transient('idkollen_latest', $result);
         return new \WP_REST_Response(["itemId or idkToken missing"], 400);
     }
 }

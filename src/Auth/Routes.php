@@ -29,5 +29,11 @@ class Routes
                 return true;
             },
         ]);
+
+        register_rest_route(Paths::MAIN_URL, '/item/(?P<item>[a-zA-Z0-9-]+)', [
+            'methods' => 'GET',
+            'callback' => __NAMESPACE__ . '\Item::boot',
+        ]);
+
     }
 }
