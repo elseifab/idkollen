@@ -22,12 +22,12 @@ class Wait
 
             sleep(1);
 
-            $url = rest_url(Paths::MAIN_URL.'/item/'.$param);
+            $url = rest_url(Paths::MAIN_URL . '/item/' . $param);
             $response = wp_remote_get($url);
 
             $value = $response['body'];
 
-            if ($value) {
+            if ($value != 'false') {
                 $break = true;
                 $result = $value;
             }
