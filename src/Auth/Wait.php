@@ -9,7 +9,7 @@ class Wait
 
     public static function loop($param)
     {
-        $timeout = Timeout::get();
+        $timeout = (int)Timeout::get();
 
         $break = false;
 
@@ -17,19 +17,24 @@ class Wait
 
         update_option($param, 'loop');
 
-        while (!$break && $timeout) {
+        while (!$break) {
             $timeout--;
             sleep(1);
 
-            $value = get_option($param);
+            $value = get_option($param, 'loop');
 
             if ($value != 'loop') {
                 $break = true;
                 $result = $value;
             }
+
+            if ($timeout <= 0) {
+                $break = true;
+            }
+
         }
 
-        delete_option($param);
+        //delete_option($param);
 
         return $result;
     }

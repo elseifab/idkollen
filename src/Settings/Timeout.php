@@ -15,7 +15,7 @@ class Timeout
      */
     public static function get()
     {
-        $result = (int)get_option(self::KEY_OPTION_KEY, null);
+        $result = (int)get_option(self::KEY_OPTION_KEY, 30);
         if (!$result) {
             return 30;
         }
