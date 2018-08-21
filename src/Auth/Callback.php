@@ -23,6 +23,6 @@ class Callback
         // temporary
         update_option($itemId, $result);
 
-        return new \WP_REST_Response(["itemId or idkToken missing"], 404);
+        return new \WP_REST_Response(["itemId or idkToken missing"], 400);
     }
 }
