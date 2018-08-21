@@ -15,13 +15,13 @@ class Wait
 
         $result = false;
 
-        update_option($param, 'loop');
+        set_transient($param, 'loop');
 
         while (!$break) {
             $timeout--;
             sleep(1);
 
-            $value = get_option($param, 'loop');
+            $value = get_transient($param);
 
             if ($value != 'loop') {
                 $break = true;
