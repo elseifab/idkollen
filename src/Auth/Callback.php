@@ -6,7 +6,7 @@ class Callback
 {
     public static function boot(\WP_REST_Request $request)
     {
-        $result = $request->get_body_params();
+        $result = $request->get_params();
 
         $itemId = isset($result['itemId']) ? $result['itemId'] : null;
         $token = isset($result['idkToken']) ? $result['idkToken'] : null;
@@ -22,6 +22,8 @@ class Callback
 
         // temporary
         update_option($itemId, $result);
+
+        update_option('idkollen_latest', $result);
 
         return new \WP_REST_Response(["itemId or idkToken missing"], 400);
     }
