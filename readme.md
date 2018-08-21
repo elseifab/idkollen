@@ -25,7 +25,7 @@ We run docker containers to unit tests in real WordPress (no mock).
 [https://github.com/wpup/test-suite](https://github.com/wpup/test-suite)
 Special thanks to Frozzare!
 
-To initialize tests with docker, run: `docker run --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=true -d mysql:latest`
+To initialize tests with docker, run: `docker run --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=true -d mysql:5.7`
 
 To run tests, in the plugin folder, eg: `docker run -e WP_VERSION=4.9 --rm -v $(pwd):/opt --link mysql frozzare/wptest:5.6 vendor/bin/phpunit`
 

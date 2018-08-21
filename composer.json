@@ -10,7 +10,8 @@
     "require-dev": {
         "phpunit/phpunit": "^5",
         "squizlabs/php_codesniffer": "*",
-        "frozzare/wp-test-suite": "*"
+        "frozzare/wp-test-suite": "*",
+        "guzzlehttp/guzzle": "*"
     },
     "license": "MIT",
     "authors": [

@@ -11,6 +11,7 @@ class Template extends \WP_UnitTestCase
             'body' => 'This is the body',
             'apiKey' => '123',
             'apiUrl' => 'https://',
+            'timeout' => 30,
             'debug' => 1,
         ]);
 
