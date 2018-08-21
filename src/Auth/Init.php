@@ -45,7 +45,7 @@ class Init
             "itemId" => $waitKey,
             "itemDescription" => "Testing login Handelstrender",
             "pno" => $socialSecurityNumber,
-            "callbackUrl" => rest_url(Paths::MAIN_URL, '/callback'),
+            "callbackUrl" => rest_url(Paths::MAIN_URL . '/callback'),
         ];
 
         return wp_remote_post("https://liveapi03.idkollen.se/api/seal-service/{$apiKey}/sign-item", [
