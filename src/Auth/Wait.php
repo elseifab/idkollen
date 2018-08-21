@@ -9,6 +9,8 @@ class Wait
 
     public static function loop($param)
     {
+        global ${$param};
+
         $timeout = (int)Timeout::get();
 
         $break = false;
@@ -19,11 +21,9 @@ class Wait
             $timeout--;
             sleep(1);
 
-            $value = get_transient($param);
-
-            if ($value) {
+            if (${$param}) {
                 $break = true;
-                $result = $value;
+                $result = ${$param};
             }
 
             if ($timeout <= 0) {

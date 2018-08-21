@@ -12,7 +12,10 @@ class Callback
         $token = isset($result['idkToken']) ? $result['idkToken'] : null;
 
         if ($itemId && $token) {
-            set_transient($itemId, $token);
+            global ${$itemId};
+
+            ${$itemId} = $token;
+
             return new \WP_REST_Response([
                 "result" => "success",
                 'itemId' => $itemId,
