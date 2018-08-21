@@ -15,15 +15,13 @@ class Wait
 
         $result = false;
 
-        set_transient($param, 'loop');
-
         while (!$break) {
             $timeout--;
             sleep(1);
 
             $value = get_transient($param);
 
-            if ($value != 'loop') {
+            if ($value) {
                 $break = true;
                 $result = $value;
             }
@@ -33,8 +31,6 @@ class Wait
             }
 
         }
-
-        //delete_option($param);
 
         return $result;
     }

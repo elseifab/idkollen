@@ -43,8 +43,13 @@ class Callback extends \WP_UnitTestCase
     public function testCallbackPath()
     {
         $request = new \WP_REST_Request('POST', $this->namespaced_route);
-        $request->set_param('itemId', 'idkollen-unit-test');
-        $request->set_param('idkToken', 'LCa0a2j/xo/5m0U8HTBBNBNCLXBkg7+g+YpeiGJm564=');
+
+        $request->set_header('content_type', 'application/json');
+
+        $request->set_body(json_encode([
+            'itemId' => 'idkollen-unit-test',
+            'idkToken' => 'LCa0a2j/xo/5m0U8HTBBNBNCLXBkg7+g+YpeiGJm564=',
+        ]));
 
         /** @var \WP_REST_Response $response */
         $response = $this->server->dispatch($request);
