@@ -19,11 +19,14 @@ class Wait
 
         while (!$break) {
             $timeout--;
+
             sleep(1);
 
-            if (${$param}) {
+            $value = apply_filters($param, false);
+
+            if ($value) {
                 $break = true;
-                $result = ${$param};
+                $result = $value;
             }
 
             if ($timeout <= 0) {

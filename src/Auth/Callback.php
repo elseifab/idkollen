@@ -12,9 +12,12 @@ class Callback
         $token = isset($result['idkToken']) ? $result['idkToken'] : null;
 
         if ($itemId && $token) {
-            global ${$itemId};
 
-            ${$itemId} = $token;
+            add_filter($itemId, function() use ($token) {
+                return $token;
+            });
+
+            sleep(3);
 
             return new \WP_REST_Response([
                 "result" => "success",
