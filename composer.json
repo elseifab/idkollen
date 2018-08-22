@@ -1,5 +1,5 @@
 {
-    "name": "elseif/id-kollen",
+    "name": "elseif/idkollen",
     "type": "wordpress-plugin",
     "config": {
         "preferred-install": "dist",

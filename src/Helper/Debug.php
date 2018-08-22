@@ -10,7 +10,7 @@ namespace ElseifAB\IDKollen\Helper;
  */
 class Debug
 {
-    const OPTION_KEY = 'id-kollen-debug';
+    const OPTION_KEY = 'idkollen-debug';
 
     protected static $instance;
     protected $log;

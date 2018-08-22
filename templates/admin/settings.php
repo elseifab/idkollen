@@ -18,7 +18,7 @@
 
     <h3>Inställningsval</h3>
 
-    <form action="?page=id-kollen-settings" method="post">
+    <form action="?page=idkollen-settings" method="post">
 
         <p>
             <label for="debugMode">

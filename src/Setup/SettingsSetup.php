@@ -14,7 +14,7 @@ class SettingsSetup implements SetupInterface
                 __('IDkollen', 'IDkollen'),
                 __('IDkollen', 'IDkollen'),
                 'manage_options',
-                'id-kollen-settings',
+                'idkollen-settings',
                 'ElseifAB\IDKollen\Settings\AdminMenu::render'
             );
         });

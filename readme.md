@@ -1,9 +1,9 @@
-# id-kollen
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/elseifab/id-kollen.git)
-[![Build Status](https://travis-ci.org/elseifab/id-kollen.svg?branch=develop)](https://travis-ci.org/elseifab/id-kollen)
-[![GitHub release](https://img.shields.io/github/release/elseifab/id-kollen.svg)](https://github.com/elseifab/archive/develop.zip)
+# idkollen
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/elseifab/idkollen.git)
+[![Build Status](https://travis-ci.org/elseifab/idkollen.svg?branch=develop)](https://travis-ci.org/elseifab/idkollen)
+[![GitHub release](https://img.shields.io/github/release/elseifab/idkollen.svg)](https://github.com/elseifab/idkollen/archive/develop.zip)
 
-Tillägg för att underlätta integration id-kollen mot WordPress-konton för inloggning via BankID
+Tillägg för att underlätta integration IDkollen mot WordPress-konton för inloggning via BankID
 
 **WORK IN PROGRESS**
 
@@ -11,11 +11,11 @@ Tillägg för att underlätta integration id-kollen mot WordPress-konton för in
 Inga releaser/versioner av detta tillägg finns ännu...
 
 ### Utvecklingsmiljö
-Roots Bedrock i repo elseifab/id-kollen-dev används som utvecklingsmiljö för detta tillägg.
+Roots Bedrock i repo elseifab/idkollen-dev används som utvecklingsmiljö för detta tillägg.
 
 ## Tester
 
-Automatiska tester görs via Travis här: [https://travis-ci.org/elseifab/id-kollen](https://travis-ci.org/elseifab/id-kollen)
+Automatiska tester görs via Travis här: [https://travis-ci.org/elseifab/idkollen](https://travis-ci.org/elseifab/idkollen)
 
 ### PHPUnit
 Obs! `composer update` före enhetstestning!

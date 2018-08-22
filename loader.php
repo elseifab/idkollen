@@ -1,10 +1,10 @@
 <?php
 /*
- * Plugin Name: ID-Kollen
- * Description: Plugin för koppling mellan WP-konton och kontroll BankID via Idkollen
- * Version: 0.2.13
+ * Plugin Name: IDkollen
+ * Description: Plugin för koppling mellan WP-konton och kontroll BankID via IDkollen
+ * Version: 0.3
  * Author: Andreas Ek, Elseif
- * GitHub Plugin URI: elseifab/id-kollen
+ * GitHub Plugin URI: elseifab/idkollen
  */
 
 defined('ABSPATH') or die('No script kiddies please!');

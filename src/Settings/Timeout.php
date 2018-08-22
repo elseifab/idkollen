@@ -8,7 +8,7 @@ namespace ElseifAB\IDKollen\Settings;
  */
 class Timeout
 {
-    const KEY_OPTION_KEY = 'id-kollen-timeout';
+    const KEY_OPTION_KEY = 'idkollen-timeout';
 
     /**
      * @return string|null

@@ -10,7 +10,7 @@
 		<const name="WTS_PLUGIN_FILE_NAME" value="loader.php" />
 	</php>
 	<testsuites>
-		<testsuite name="Plugin Test Suite">
+		<testsuite name="IDkollen test suite">
 			<directory suffix=".php">./tests/</directory>
 		</testsuite>
 	</testsuites>

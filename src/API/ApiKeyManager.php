@@ -8,7 +8,7 @@ namespace ElseifAB\IDKollen\API;
  */
 class ApiKeyManager
 {
-    const KEY_OPTION_KEY = 'id-kollen-key';
+    const KEY_OPTION_KEY = 'idkollen-key';
 
     /**
      * @return string|null

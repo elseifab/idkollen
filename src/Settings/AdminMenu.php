@@ -29,8 +29,8 @@ class AdminMenu
         $apiKey = ApiKeyManager::get();
 
         echo Template::render('admin/settings', [
-            'headline' => __('Inställningar för IDkollen', 'id-kollen'),
-            'body' => __('Specifika inställningar för plugin IDkollen', 'IDkollen'),
+            'headline' => __('Inställningar för IDkollen', 'idkollen'),
+            'body' => __('Specifika inställningar för plugin IDkollen', 'idkollen'),
             'apiUrl' => rest_url(Paths::MAIN_URL . '/auth'),
             'apiKey' => $apiKey,
             'timeout' => Timeout::get(),
