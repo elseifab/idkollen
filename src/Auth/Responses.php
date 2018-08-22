@@ -7,6 +7,10 @@ use ElseifAB\IDKollen\Settings\Timeout;
 class Responses
 {
 
+    /**
+     * @param $socialSecurityNumber
+     * @return \WP_REST_Response
+     */
     public static function notValidSocial($socialSecurityNumber)
     {
         $response = new \WP_REST_Response([
@@ -17,6 +21,10 @@ class Responses
         return $response;
     }
 
+    /**
+     * @param \WP_Error $remoteReply
+     * @return \WP_REST_Response
+     */
     public static function initError($remoteReply)
     {
         $response = new \WP_REST_Response([
