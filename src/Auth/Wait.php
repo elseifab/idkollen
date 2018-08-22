@@ -2,38 +2,33 @@
 
 namespace ElseifAB\IDKollen\Auth;
 
-use ElseifAB\IDKollen\Settings\Timeout;
-
 class Wait
 {
 
-    public static function loop($param)
+    public static function loop(\WP_REST_Request $request)
     {
-        global ${$param};
-
-        $timeout = (int)Timeout::get();
-
-        $break = false;
+        $item = $request->get_param('item');
 
         $result = false;
 
-        while (!$break) {
+        $timeout = 5;
+
+        while (true) {
             $timeout--;
 
             sleep(1);
 
-            $url = rest_url(Paths::MAIN_URL . '/item/' . $param);
+            $url = rest_url(Paths::MAIN_URL . '/item/' . $item);
             $response = wp_remote_get($url);
 
             $value = $response['body'];
 
             if ($value != 'false') {
-                $break = true;
-                $result = $value;
+                return $value;
             }
 
             if ($timeout <= 0) {
-                $break = true;
+                wp_redirect(rest_url(Paths::MAIN_URL.'/loop/'.$item));
             }
 
         }

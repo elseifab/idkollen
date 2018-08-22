@@ -3,6 +3,7 @@
 namespace ElseifAB\IDKollen\Auth;
 
 use ElseifAB\IDKollen\API\ApiKeyManager;
+use ElseifAB\IDKollen\Settings\Timeout;
 
 class Init
 {
@@ -24,13 +25,16 @@ class Init
             Responses::initError($reply);
         }
 
-        $result = Wait::loop($waitKey);
+        $response = wp_remote_get(rest_url(Paths::MAIN_URL.'/loop/'. $waitKey), [
+            'timeout' => Timeout::get(),
+            'redirection' => 100,
+        ]);
 
-        if (!$result) {
+        if ( is_wp_error( $response ) ) {
             return Responses::clientTimeout();
         }
 
-        return Responses::success($result);
+        return Responses::success($response['body']);
     }
 
     /**
