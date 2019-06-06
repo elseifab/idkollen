@@ -44,7 +44,7 @@ class Init extends \WP_UnitTestCase
     {
         $request = new \WP_REST_Request('POST', $this->initUri);
 
-        $request->set_param('pno', '197212141735');
+        $request->set_param('pno', '198112189876');
 
         $response = $this->server->dispatch($request);
 
