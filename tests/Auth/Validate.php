@@ -14,9 +14,9 @@ class Validate extends \WP_UnitTestCase
         $this->assertFalse(\ElseifAB\IDKollen\Auth\Validate::socialSecurityNumber('123'));
     }
 
-    public function testInvalidSocialSecurityNumber()
+    public function testToLongSocialSecurityNumber()
     {
-        $this->assertFalse(\ElseifAB\IDKollen\Auth\Validate::socialSecurityNumber('8113189877'));
+        $this->assertFalse(\ElseifAB\IDKollen\Auth\Validate::socialSecurityNumber('811318987712'));
     }
 
     public function testSocialSecurityNumber()
@@ -24,7 +24,7 @@ class Validate extends \WP_UnitTestCase
         $this->assertTrue(\ElseifAB\IDKollen\Auth\Validate::socialSecurityNumber('8112189876'));
     }
 
-    public function testLongSocialSecurityNumber()
+    public function testLongValidSocialSecurityNumber()
     {
         $this->assertTrue(\ElseifAB\IDKollen\Auth\Validate::socialSecurityNumber('198112189876'));
     }
