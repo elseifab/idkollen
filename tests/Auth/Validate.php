@@ -16,7 +16,7 @@ class Validate extends \WP_UnitTestCase
 
     public function testInvalidSocialSecurityNumber()
     {
-        $this->assertFalse(\ElseifAB\IDKollen\Auth\Validate::socialSecurityNumber('8112189877'));
+        $this->assertFalse(\ElseifAB\IDKollen\Auth\Validate::socialSecurityNumber('8113189877'));
     }
 
     public function testSocialSecurityNumber()
