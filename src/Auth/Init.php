@@ -12,7 +12,7 @@ class Init
         $socialSecurityNumber = $request->get_param('pno');
 
         if (!Validate::socialSecurityNumber($socialSecurityNumber)) {
-            return Responses::notValidSocial($socialSecurityNumber);
+            //return Responses::notValidSocial($socialSecurityNumber);
         }
 
         $init = new static();
