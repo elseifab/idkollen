@@ -49,7 +49,7 @@ class Init
             "itemId" => $waitKey,
             "itemDescription" => "Login via IDkollen",
             "pno" => $socialSecurityNumber,
-            "ipAddress" => $_SERVER['SERVER_ADDR'],
+            "ipAddress" => $_SERVER['REMOTE_ADDR'],
             "callbackUrl" => rest_url(Paths::MAIN_URL . '/callback'),
         ];
 
