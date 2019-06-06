@@ -29,6 +29,7 @@ class Wait
 
             if ($timeout <= 0) {
                 wp_redirect(rest_url(Paths::MAIN_URL.'/loop/'.$item));
+                exit();
             }
 
         }

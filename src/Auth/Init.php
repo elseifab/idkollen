@@ -12,7 +12,7 @@ class Init
         $socialSecurityNumber = $request->get_param('pno');
 
         if (!Validate::socialSecurityNumber($socialSecurityNumber)) {
-            //return Responses::notValidSocial($socialSecurityNumber);
+            return Responses::notValidSocial($socialSecurityNumber);
         }
 
         $init = new static();
@@ -47,8 +47,9 @@ class Init
 
         $body = [
             "itemId" => $waitKey,
-            "itemDescription" => "Testing login Handelstrender",
+            "itemDescription" => "Login via IDkollen",
             "pno" => $socialSecurityNumber,
+            "ipAddress" => $_SERVER['SERVER_ADDR'],
             "callbackUrl" => rest_url(Paths::MAIN_URL . '/callback'),
         ];
 
