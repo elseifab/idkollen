@@ -10,6 +10,7 @@ class Init
     public static function boot(\WP_REST_Request $request)
     {
         $socialSecurityNumber = $request->get_param('pno');
+        $mobile = (bool)$request->get_param('mobile');
 
         if (!Validate::socialSecurityNumber($socialSecurityNumber)) {
             return Responses::notValidSocial($socialSecurityNumber);
@@ -25,7 +26,34 @@ class Init
             Responses::initError($reply);
         }
 
-        $response = wp_remote_get(rest_url(Paths::MAIN_URL.'/loop/'. $waitKey), [
+        $params = isset($reply['body']) ? $reply['body'] : [];
+        $token = isset($params['autoStartToken']) ? $params['autoStartToken'] : null;
+
+        $waitUrl = rest_url(Paths::MAIN_URL.'/loop/'. $waitKey);
+
+        if($mobile) {
+            return new \WP_REST_Response([
+                "result" => "success",
+                'waitUrl' => $waitUrl,
+                "openUrl" => "bankid:///?autostarttoken=$token&redirect=",
+            ]);
+        }
+
+        return self::waitInner($waitUrl);
+    }
+
+    public static function wait(\WP_REST_Request $request)
+    {
+        $params = $request->get_json_params();
+
+        $waitUrl = isset($params['waitUrl']) ? $params['waitUrl'] : null;
+
+        return self::waitInner($waitUrl);
+    }
+
+    public static function waitInner($waitUrl)
+    {
+        $response = wp_remote_get($waitUrl, [
             'timeout' => Timeout::get(),
             'redirection' => 100,
         ]);
@@ -39,7 +67,8 @@ class Init
 
     /**
      * @param $socialSecurityNumber
-     * @return array|\WP_Error
+     * @param $waitKey
+     * @return mixed
      */
     private function callInit($socialSecurityNumber, $waitKey)
     {

@@ -6,7 +6,6 @@ use ElseifAB\IDKollen\Auth\Paths;
 
 class Init extends \WP_UnitTestCase
 {
-
     /**
      * Test REST Server
      *
@@ -49,6 +48,45 @@ class Init extends \WP_UnitTestCase
         $response = $this->server->dispatch($request);
 
         $this->assertEquals(200, $response->get_status());
+        $this->assertEquals($response->data['result'], 'success');
+    }
+
+    public function testInitMobile()
+    {
+        $request = new \WP_REST_Request('POST', $this->initUri);
+
+        $request->set_param('pno', '198112189876');
+        $request->set_param('mobile', '1');
+
+        $response = $this->server->dispatch($request);
+
+        $this->waitUrl = $response->data['waitUrl'];
+
+        $this->assertEquals(200, $response->get_status());
+        $this->assertEquals($response->data['result'], 'success');
+        $this->assertEquals(isset($response->data['waitUrl']), true);
+        $this->assertEquals(isset($response->data['openUrl']), true);
+    }
+
+    public function testWait()
+    {
+        $request = new \WP_REST_Request('POST', $this->initUri);
+
+        $request->set_param('pno', '198112189876');
+        $request->set_param('mobile', '1');
+
+        $response = $this->server->dispatch($request);
+
+        $waitUrl = $response->data['waitUrl'];
+
+        //$routes = $this->server->get_routes();
+        //$this->assertArrayHasKey($waitUrl, $routes);
+
+        $request = new \WP_REST_Request('GET', $waitUrl);
+
+        $response = $this->server->dispatch($request);
+
+        //$this->assertEquals(200, $response->get_status());
         //$this->assertEquals($response->data['result'], 'success');
     }
 
