@@ -12,8 +12,10 @@ class Init
         $socialSecurityNumber = $request->get_param('pno');
         $mobile = (int)$request->get_param('mobile');
 
-        if (!$mobile && !Validate::socialSecurityNumber($socialSecurityNumber)) {
-            return Responses::notValidSocial($socialSecurityNumber);
+        if ($mobile == 0) {
+            if (!Validate::socialSecurityNumber($socialSecurityNumber)) {
+                return Responses::notValidSocial($socialSecurityNumber);
+            }
         }
 
         $init = new static();
