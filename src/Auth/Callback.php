@@ -12,7 +12,6 @@ class Callback
         $token = isset($result['idkToken']) ? $result['idkToken'] : null;
 
         if ($itemId && $token) {
-
             add_option($itemId, $token);
 
             return new \WP_REST_Response([
