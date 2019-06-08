@@ -12,7 +12,7 @@ class Init
         $socialSecurityNumber = $request->get_param('pno');
         $mobile = (bool)$request->get_param('mobile');
 
-        if (!Validate::socialSecurityNumber($socialSecurityNumber)) {
+        if (!$mobile && !Validate::socialSecurityNumber($socialSecurityNumber)) {
             return Responses::notValidSocial($socialSecurityNumber);
         }
 
@@ -29,9 +29,9 @@ class Init
         $params = isset($reply['body']) ? $reply['body'] : [];
         $token = isset($params['autoStartToken']) ? $params['autoStartToken'] : null;
 
-        $waitUrl = rest_url(Paths::MAIN_URL.'/loop/'. $waitKey);
+        $waitUrl = rest_url(Paths::MAIN_URL . '/loop/' . $waitKey);
 
-        if($mobile) {
+        if ($mobile) {
             return new \WP_REST_Response([
                 "result" => "success",
                 'waitUrl' => $waitUrl,
@@ -58,7 +58,7 @@ class Init
             'redirection' => 100,
         ]);
 
-        if ( is_wp_error( $response ) ) {
+        if (is_wp_error($response)) {
             return Responses::clientTimeout();
         }
 
