@@ -10,7 +10,7 @@ class Init
     public static function boot(\WP_REST_Request $request)
     {
         $socialSecurityNumber = $request->get_param('pno');
-        $mobile = (bool)$request->get_param('mobile');
+        $mobile = (int)$request->get_param('mobile');
 
         if (!$mobile && !Validate::socialSecurityNumber($socialSecurityNumber)) {
             return Responses::notValidSocial($socialSecurityNumber);
