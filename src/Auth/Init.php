@@ -78,8 +78,8 @@ class Init
 
         $body = [
             "itemId" => $waitKey,
-            "itemDescription" => "Login via IDkollen",
-            "pno" => $socialSecurityNumber,
+            "itemDescription" => "Login WordPress via IDKollen",
+            "pNo" => $socialSecurityNumber,
             "ipAddress" => $_SERVER['REMOTE_ADDR'],
             "callbackUrl" => rest_url(Paths::MAIN_URL . '/callback'),
         ];
