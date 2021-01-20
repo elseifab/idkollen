@@ -41,12 +41,17 @@ class Routes
         register_rest_route(Paths::MAIN_URL, '/item/(?P<item>[a-zA-Z0-9-]+)', [
             'methods' => 'GET',
             'callback' => __NAMESPACE__ . '\Item::boot',
+            'permission_callback' => function () {
+                return true;
+            },
         ]);
 
         register_rest_route(Paths::MAIN_URL, '/loop/(?P<item>[a-zA-Z0-9-]+)', [
             'methods' => 'GET',
             'callback' => __NAMESPACE__ . '\Wait::loop',
+            'permission_callback' => function () {
+                return true;
+            },
         ]);
-
     }
 }
